@@ -1,0 +1,27 @@
+.con-text {
+    padding:20px;
+}
+
+.reg-lgn-btns {
+    padding-left:750px;
+}
+
+.home-icon {
+    width: 60px;
+    height: 60px;
+    padding-top: 5px;
+}
+
+.home-text {
+    width: 175px;
+    height: 35px;
+    top:-20px;
+}
+
+.navbar-nav {padding-top:12px; font-size:18px;}
+
+.slide-pic {
+    width:100%;
+    height:80%;
+}
+
