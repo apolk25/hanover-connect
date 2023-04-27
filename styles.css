@@ -3,7 +3,7 @@
 }
 
 .reg-lgn-btns {
-    padding-left:750px;
+    padding-left:85%;
 }
 
 .home-icon {
@@ -20,8 +20,70 @@
 
 .navbar-nav {padding-top:12px; font-size:18px;}
 
-.slide-pic {
-    width:100%;
-    height:80%;
+.banner {
+    width:40%;
+    height:40%;
 }
 
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 40px;
+    width: 40px;
+    outline: black;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+#carousel {
+    text-align:center;
+    background-image: linear-gradient(to bottom right, rgba(29, 146, 235, 0.63), rgb(133, 162, 178));
+    backdrop-filter: blur(5px);
+    padding-top:10px;
+    padding-bottom: 60px;
+}
+
+.carousel-control-next-icon {
+    transform: translateX(-325px);
+  }
+  
+  .carousel-control-prev-icon {
+    transform: translateX(325px);
+  }
+  
+.bottom-body {
+    width: 100%;
+    height: 41.85%;
+    background-size: cover;
+    background-image: url('hanover-overhead.jpg');
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+    border: 5px solid black
+}
+
+
+
+.bottom-border {
+    /* padding-top:%; */
+    width: 100%;
+    height: 75px;
+    background-color:rgb(255, 255, 255);
+    border: solid 5px black;
+}
+
+#bottom-text {
+    text-align: center;
+    padding-top: 18px;
+    font-size: 25px;
+    font-family:  'Lucida Handwriting';
+
+}
+
+.rect {
+    width: 50px;
+    height: 100px;
+    background-color: white;
+    text-align:center;
+    transform: translateY(-10px);
+
+}

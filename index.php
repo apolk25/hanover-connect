@@ -30,52 +30,56 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">TBD</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    TBD
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+                
                 </ul>
                 
                 <div class="reg-lgn-btns">
                     <!-- <button class="btn btn-primary">Register</button> -->
 
                     <!-- <button class="btn btn-primary">Register</button> -->
-                    <a class="<?php print($content == 'register' ? 'active' : ''); ?>" href="index.php?content=register"><button class="btn btn-success">Register</button></a>
-                    <a class="<?php print($content == 'login' ? 'active' : ''); ?>" href="index.php?content=login"><button class="btn btn-primary">Login</button></a>
+                    <a class="<?php print($content == 'register' ? 'active' : ''); ?>" href="index.php?content=register"><button class="btn btn-success"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</button></a>
+                    <a class="<?php print($content == 'login' ? 'active' : ''); ?>" href="index.php?content=login"><button class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button></a>
 
 
                 </div>
             </div>
+
         </nav>
 
 
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img class="slide-pic" src="connect-banner.png" class="d-block w-100" alt="...">
+        <div id="carousel" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="banner" src="connect-banner.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img class="" src="" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img class="" src="" class="d-block w-100" alt="...">
+                </div>
             </div>
-            <div class="carousel-item">
-            <img class="slide-pic" src="hanover-crossing.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-            <img class="slide-pic"src="hanover-overhead.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+        <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+        </div>
+
+            <div class="bottom-body"></div>
+        <div class="bottom-border">
+            <h6 id="bottom-text">Hanover Connect || 2023<h6>
+        </div>
+
 </body>
 </html>
