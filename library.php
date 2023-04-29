@@ -9,22 +9,6 @@
 
 extract($_REQUEST);
 
-/*
- * Returns the content to be included based on the 'content' request parameter, if present.
- */
-function get_content()
-{
-    global $content;
-
-    if (!isset($content))
-    {
-        $content = 'list';
-    }
-
-    $content = 'connect' . ucfirst(strtolower($content));
-
-    return $content;
-}
 
 /*
  * Returns a connection to the underlying MySQL database.
