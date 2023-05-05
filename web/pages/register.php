@@ -18,26 +18,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css?v=<?php echo rand(); ?>">
-    <?php include('library.php');?>
+    <?php include('scripts/library.php');?>
     <script src="scripts.js?v=<?php echo rand(); ?>"></script>
-    <link rel="icon" type="image/x-icon" href="icon.png">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
 </head>
 <body class="logbody">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand con-text" href="index.php"><img src="icon.png" class="home-icon"><img src="home-text.png" class="home-text"></a>
+            <a class="navbar-brand con-text" href="index.php"><img src="img/icon.png" class="home-icon"><img src="img/home-text.png" class="home-text"></a>
 
 
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">TBD</a>
-                </li>
-                
-                </ul>
+
                 
                 <div class="reg-lgn-btns">
                     <!-- <button class="btn btn-primary">Register</button> -->
@@ -57,20 +49,26 @@
         <div class="shape"></div>
     </div>
 
-    <form class="logform" method="POST" action="loginRequest.php">
-        <h3 class="logh3">Login Here</h3>
+    <form class="logform" method="POST" action="scripts/registerRequest.php">
+        <h3 class="logh3">Registration</h3>
 
-        <label class="loglabel" for="username" >Username</label>
-        <input class="loginput" type="text" placeholder="Email or Phone" id="username" name="username">
+        <label class="loglabel" for="first_name" >First Name</label>
+        <input class="loginput" type="text" placeholder="John" id="first_name" name="first_name">
+
+        <label class="loglabel" for="last_name" >Last Name</label>
+        <input class="loginput" type="text" placeholder="Doe" id="last_name" name="last_name">
+
+        <label class="loglabel" for="email" >Email</label>
+        <input class="loginput" type="text" placeholder="Email or Phone" id="email" name="email">
 
         <label class="loglabel" for="password">Password</label>
         <input class="loginput" type="password" placeholder="Password" id="password" name="password">
 
-        <button class="logbutton">Log In</button>
-        <div class="social">
+        <button class="logbutton">Create account</button>
+        <!-- <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-        </div>
+        </div> -->
     </form>
 </body>
 </html>
