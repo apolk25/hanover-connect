@@ -69,7 +69,10 @@ if (isset($_GET['logout'])) {
 
                     <img src="img/default-profile.jpg" id="pfp">
                     <?php
-                        echo "<script>document.getElementById('pfp').src = 'uploads/" . $_SESSION['userId'] . ".png';</script>";
+                        $filename = 'uploads/' . $_SESSION['userId'] . '.png';
+                        if(file_exists($filename)){
+                            echo "<script>document.getElementById('pfp').src = 'uploads/" . $_SESSION['userId'] . ".png';</script>";
+                        }                   
                     ?>  
                     </button>
                     <ul class="dropdown-menu">
@@ -91,7 +94,12 @@ if (isset($_GET['logout'])) {
                 <input type="submit" value="Upload Image" name="submit">
             </form>
         </div>
+        <?php
 
+        if(isset($_GET["success"]) && htmlspecialchars($_GET["success"])){
+            echo "<h1 id='success'>Profile photo updated successfully!</h1>";
+        }
+        ?>
         
         
 

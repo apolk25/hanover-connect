@@ -79,8 +79,10 @@ if (isset($_GET['logout'])) {
 
                     <img src="img/default-profile.jpg" id="pfp">
                     <?php
-                        // echo "<img src='uploads/" . $_SESSION['userId'] . ".png' class='pfp'>";
-                        echo "<script>document.getElementById('pfp').src = 'uploads/" . $_SESSION['userId'] . ".png';</script>";
+                        $filename = 'uploads/' . $_SESSION['userId'] . '.png';
+                        if(file_exists($filename)){
+                            echo "<script>document.getElementById('pfp').src = 'uploads/" . $_SESSION['userId'] . ".png';</script>";
+                        }
                     ?>
 
                     </button>

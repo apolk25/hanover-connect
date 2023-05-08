@@ -28,7 +28,7 @@ if (file_exists($target_file)) {
 }
 
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["fileToUpload"]["size"] > 5000000) {
   echo "Sorry, your file is too large.";
   $uploadOk = 0;
 }
@@ -47,15 +47,13 @@ if ($uploadOk == 0) {
 } else {
 //   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 //   rename($_FILES['fileToUpload']['name'], $_SESSION['userId']);
-    $target_file = $target_dir . $_SESSION['userId'] . '.png';
-
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-    echo "</br>";
-    echo "<a href='../index.php'>Go back to index</a>";
-  } else {
-    echo "Sorry, there was an error uploading your file.";
-  }
+$target_file = $target_dir . $_SESSION['userId'] . '.png';
+  move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+  header('location: ../profileUpload.php?success=true');
+//     echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+//   } else {
+//     echo "Sorry, there was an error uploading your file.";
+//   }
 }
 
 
