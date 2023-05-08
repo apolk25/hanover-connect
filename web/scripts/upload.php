@@ -51,6 +51,8 @@ if ($uploadOk == 0) {
 
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    echo "</br>";
+    echo "<a href='../index.php'>Go back to index</a>";
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
