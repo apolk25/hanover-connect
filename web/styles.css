@@ -42,8 +42,9 @@
     background-size: cover;
     background-image: url('hanover-gvyd-gfx.png');
     /* filter: blur(7px);
-    -webkit-filter: blur(7px); */
-} */
+    -webkit-filter: blur(7px); 
+}*/
+
 
 
 
@@ -238,6 +239,32 @@
 }
 
 
-.carousel-inner {
+
+
+
+
+.inner-pfp {
     visibility: visible;
+    width:100%;
+    padding-top:10%;
+    justify-content:center;
+}
+
+.divider {
+    background-color:none;
+    padding-top:10%;
+}
+
+.pfpform {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:20px;
+    text-align:center;
+    font-weight:bolder;
+}
+
+#pfp {
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    left:10px;
 }

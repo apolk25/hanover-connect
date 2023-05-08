@@ -63,28 +63,15 @@ if (isset($_GET['logout'])) {
                     </li>
 
 
-                    <!-- <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                    </div> -->
-    
+
                     <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
                     <img src="img/default-profile.jpg" id="pfp">
                     <?php
-                        // echo "<img src='uploads/" . $_SESSION['userId'] . ".png' class='pfp'>";
                         echo "<script>document.getElementById('pfp').src = 'uploads/" . $_SESSION['userId'] . ".png';</script>";
-                    ?>
-
+                    ?>  
                     </button>
-                    <?php endif ?>      
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="profileUpload.php    "><i class="fas fa-user-circle"></i> Change photo</a></li>
                         <li><a class="dropdown-item" href="index.php?logout='1'"><i class="fas fa-sign-out-alt"></i> Sign out</a></li>
@@ -92,38 +79,21 @@ if (isset($_GET['logout'])) {
                     </ul>
 
                     </div>
-
-
-                <!-- <li class="logout nav-item">
-                                <a href="index.php?logout='1'" style="color: red;">
-                                        Click here to Logout
-                                </a>
-                </li> -->
-
-                
-                
-                
+  
+                    <?php endif ?>   
             </div>
         </nav>
 
-
-        
-        
-    </div>
-    <div id="carousel" class="carousel slide active" data-bs-ride="carousel">
-        <div class="carousel-inner" >
-            </div>
-            <div class="carousel-item active" data-bs-bg-image="img/connect-banner.png">
-                <img class="banner" src="img/connect-banner.png" class="d-block w-100" alt="...">
-                <h1 class="welcome"> Welcome to Hanover Connect! </h1>
-            </div>
+        <div class="divider"></div>
+        <div class="inner-pfp">
+            <form class="pfpform" action="scripts/upload.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" value="Upload Image" name="submit">
+            </form>
         </div>
-    </div>
 
-    <div id="alert" class="alert alert-position alert-success">
-        <a class="close" onclick="$('#alert').fadeOut()"><span aria-hidden="true">&times;</span></a>
-        <strong id="alertTitle">Success!</strong> <span id="alertMessage">Success message.</span>
-    </div>
+        
+        
 
 
 

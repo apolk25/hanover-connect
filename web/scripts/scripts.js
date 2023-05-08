@@ -34,18 +34,3 @@ function showAlert(title, message) {
     $('#alertMessage').html(message);
     $('#alert').fadeIn();
 }
-
-function profilePrompt(){
-    if($('.profileBody').css('visibility') == 'visible'){
-        $('.profileBody').css('visibility', 'hidden');
-        $('.carousel-inner').css('visibility', 'visible');
-
-
-    }else{
-        $('.profileBody').css('visibility', 'visible');
-        $('.carousel-inner').css('visibility', 'hidden');
-
-    }
-    console.log("called");
-    // $('.profileBody').css('visibility', 'visible');
-}
