@@ -8,8 +8,6 @@
  *************************************************************************************************/
 
 extract($_REQUEST);
-
-
 /*
  * Returns a connection to the underlying MySQL database.
  */
@@ -29,6 +27,7 @@ function get_database_connection()
 
     return $conn;
 }
+
 
 
 

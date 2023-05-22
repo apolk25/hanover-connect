@@ -27,10 +27,37 @@ function loginRequest() {
     }
 }
 
-function showAlert(title, message) {
+function showAlert() {
     $('#alert').hide();
     // $('#alert').removeClass('alert-success alert-info alert-warning alert-danger').addClass('alert-' + type);
-    $('#alertTitle').text(title);
-    $('#alertMessage').html(message);
+    // $('#alertTitle').text(title);
+    // $('#alertMessage').html(message);
     $('#alert').fadeIn();
+}
+
+function showOptions(){
+    let form = document.getElementById("post-form");
+    form.style.display = "block";
+    let btn = document.getElementById('create-btn')
+    btn.remove()
+}
+
+
+  var loadFile = function(event) {
+    var preview = document.getElementById('preview');
+    preview.src = URL.createObjectURL(event.target.files[0]);
+    preview.onload = function() {
+      URL.revokeObjectURL(preview.src) // free memory
+    }
+  };
+
+
+function deletePost(id, from, pfid){
+    if (confirm('Are you sure you want to delete this post?')) {
+        location.href = 'scripts/deletePost.php?id=' + id + '&from=' + from + '&pfid=' + pfid;
+    }
+}
+
+function follow(id){
+    location.href = 'scripts/follow.php?userId=' + id;
 }

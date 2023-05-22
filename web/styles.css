@@ -3,7 +3,7 @@
 }
 
 .reg-lgn-btns {
-    padding-left:80%;
+    padding-left:75%;
 }
 
 .home-icon {
@@ -207,15 +207,15 @@
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
-    /* position: fixed; */
+    position: fixed;
 
-    /* z-index: 10000; */
+    z-index: 10000;
 }
 
 .signed-in {
-    padding-top:10px;  
+    padding-top:15px;  
     font-size:20px;
-    padding-left:80%;
+    padding-left:75%;
 }
 
 .pfp {
@@ -269,9 +269,229 @@
     left:10px;
 }
 
-#success {
+.success {
     font-size: 25px;
     padding-top:20px;
     text-align:center;
     color:lime;
+}
+
+
+/* #posts {
+    font-size:20px;
+    text-decoration: none;
+    
+} */
+
+.post {
+    width: 800px;
+    background-color: rgba(255,255,255,0.13);
+    position: relative;
+    transform: translate(-50%, 0%);
+    margin-top: 50px;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+    text-align:center;
+    overflow-wrap: break-word;
+    
+}
+
+.post-img {
+    max-width: 600px;
+    max-height:500px;
+}
+
+.post-caption {
+    padding-bottom: 25px;
+    text-align:center;
+}
+
+#posts {
+    text-decoration:none;
+    color: black;
+    font-size:20px;
+}
+
+.post-pfp {
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    float:left;
+    position:absolute;
+    left:20px;
+}
+
+.user-posted {
+    float:left;
+    position:absolute;
+    left:90px;
+    padding-top:10px;
+}
+
+.posted-date {
+    float:right;
+}
+
+.navbar-link {
+    font-size:20px;
+    padding-top:10px;
+    text-decoration: none;
+    color:black;
+}
+
+.create-post {
+    width: 800px;
+    background-color: rgba(255,255,255,0.13);
+    position: relative;
+    transform: translate(-50%, 0%);
+    margin-top: 50px;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(69, 130, 252, 0.6);
+    padding: 50px 35px;
+    text-align:center;
+    overflow-wrap: break-word;
+    
+}
+
+#feed {
+    text-align: center;
+    padding-top: 25px;
+}
+
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+  }
+  
+
+  
+  #feed  {
+    margin: 0;
+    font-family: 'Rocher';
+
+  }
+  
+  @font-palette-values --Grays {
+    font-family: Rocher;
+    base-palette: 9;
+  }
+  
+  @font-palette-values --Purples {
+    font-family: Rocher;
+    base-palette: 6;
+  }
+  
+  @font-palette-values --Mint {
+    font-family: Rocher;
+    base-palette: 7;
+  }
+  
+  .grays {
+    font-palette: --Grays;
+  }
+  
+  .purples {
+    font-palette: --Purples;
+  }
+  
+  .mint {
+    font-palette: --Mint;
+  }
+
+#post-form {
+    display:none;
+    padding-top:20px;
+    
+}
+
+#caption-field {
+    background: none;
+    border: none;
+    color:black;
+    outline:none;
+    float:left;
+    width:100%;
+}
+
+#caption-field::placeholder {
+    color:black;
+}
+
+#caption-field textarea {
+    color:black;
+}
+
+
+#caption-form{
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius:10px;
+    height:60px;
+}
+
+#file {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#preview {
+    float:center;
+    width:100%
+}
+
+#user {
+    color:black;
+    text-decoration: none;
+}
+
+
+.delete-post {
+    float:right;
+    background: none;
+    border:none;
+    color:rgba(195, 0, 0, 0.859);
+}
+
+.users-posts {
+    text-align:center;
+}
+
+.user-profile-info {
+    text-align:center;
+    background-color:rgb(213, 213, 213);
+    width: 800px;
+    background-color: rgba(255,255,255,0.13);
+    position: relative;
+    transform: translate(-50%, 0%);
+    margin-top: 50px;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(69, 130, 252, 0.6);
+    padding: 50px 35px;
+    text-align:center;
+    overflow-wrap: break-word;
+}
+
+.user-name {
+    text-align:center;
+    padding-top:20px;
+}
+
+.profile-pfp {
+    border-radius: 50%;
+    width:200px;
+    height:200px;
+}
+
+.users-posts {
+    padding-top: 30px;
 }

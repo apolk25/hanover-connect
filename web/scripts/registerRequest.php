@@ -25,8 +25,8 @@ SQL;
 
     if (mysqli_query($dbh, $sql))
     {
-
         http_response_code(200);
+        header('location: ../register.php?registerSuccess=true');
 
     }
     else

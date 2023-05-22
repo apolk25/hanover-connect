@@ -47,9 +47,28 @@ if ($uploadOk == 0) {
 } else {
 //   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 //   rename($_FILES['fileToUpload']['name'], $_SESSION['userId']);
-$target_file = $target_dir . $_SESSION['userId'] . '.png';
-  move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-  header('location: ../profileUpload.php?success=true');
+
+
+  $target_file = $target_dir . $_SESSION['userId'] . '.png';
+  $target_for_db = $_SESSION['userId'] . '.png';
+  $conn = get_database_connection();
+  $userId = $_SESSION['userId'];
+  $sql = <<<SQL
+    update users
+    set user_pfp = '{$target_for_db}'
+    where user_id = $userId
+  SQL;
+
+  echo $sql;
+  $result = mysqli_query($conn, $sql);
+  if(mysqli_query($conn, $sql)){
+      move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+      header('location: ../profileUpload.php?success=true');
+
+  }else{
+    header('location: ../profileUpload.php?success=false');
+  }
+  
 //     echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
 //   } else {
 //     echo "Sorry, there was an error uploading your file.";
