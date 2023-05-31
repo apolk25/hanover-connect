@@ -1,9 +1,9 @@
 <?php
 include('scripts/library.php');
 session_start();
+include('head.php');
+include('navigation.php');
 ?>
-<?php include('head.php'); ?>
-<?php include('navigation.php'); ?>
 
 <h1 id="feed" class="grays">Recent Posts</h1>
 <?php if(isset($_SESSION['userId'])) : ?>
@@ -44,8 +44,8 @@ while ($row = $result->fetch_assoc()) {
     }
     echo '<div class="post" id="user-post-' . $row['post_id'] . '">';
     echo '<img class="post-pfp" src="uploads/' . $pfp. ' ">';
-    echo '<a id="user" href="profile.php?id=' . $row['user_id'] . '"><h5 class="user-posted">' . $row['user_first_name'] . ' ' . $row['user_last_name'] . '</h5></a>';
-    echo '<h6 class="posted-date"> @ ' . $row['post_created'] . '<h6>';
+    echo '<a class="user" href="profile.php?id=' . $row['user_id'] . '"><h5 class="user-posted">' . $row['user_first_name'] . ' ' . $row['user_last_name'] . '</h5></a>';
+    echo '<h6 class="posted-date">' . date_format(date_create($row['post_created']), 'n/d/Y H:i A') . '<h6>';
     if (isset($_SESSION['userId']) && $_SESSION['userId'] == $row['user_id']){
         echo '&nbsp&nbsp';
         echo '<button onclick="deletePost(' . $row['post_id'] . ', 1, 0)" class="delete-post">Delete post <i class="fas fa-trash"></i></button>';

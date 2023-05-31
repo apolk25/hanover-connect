@@ -28,6 +28,11 @@ function get_database_connection()
     return $conn;
 }
 
+if(isset($_SESSION['userId'])){
+    $userId = $_SESSION['userId'];
+}
+
+
 
 
 

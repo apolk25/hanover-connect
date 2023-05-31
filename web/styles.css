@@ -215,7 +215,7 @@
 .signed-in {
     padding-top:15px;  
     font-size:20px;
-    padding-left:75%;
+    padding-left:65%;
 }
 
 .pfp {
@@ -300,9 +300,11 @@
     
 }
 
-.post-img {
+.post-img, #preview {
     max-width: 600px;
     max-height:500px;
+    min-width: 200px;
+    border-radius: 5px;
 }
 
 .post-caption {
@@ -341,7 +343,10 @@
     padding-top:10px;
     text-decoration: none;
     color:black;
+    padding-left:10px;
 }
+
+
 
 .create-post {
     width: 800px;
@@ -418,6 +423,7 @@
     outline:none;
     float:left;
     width:100%;
+    /* background-color: #f0f0f0; */
 }
 
 #caption-field::placeholder {
@@ -439,21 +445,19 @@
 #file {
     padding-top: 20px;
     padding-bottom: 20px;
+    /* margin-left:-33%; */
 }
 
-#preview {
-    float:center;
-    width:100%
-}
 
-#user {
+.user {
     color:black;
     text-decoration: none;
 }
 
 
 .delete-post {
-    float:right;
+    margin-right:-110%;
+    margin-top: 25px;
     background: none;
     border:none;
     color:rgba(195, 0, 0, 0.859);
@@ -494,4 +498,171 @@
 
 .users-posts {
     padding-top: 30px;
+}
+
+.user-bio {
+    /* text-align:center; */
+    background-color:rgb(240, 240, 240);
+    box-shadow: 0 0 40px rgba(223, 215, 215, 0.6);
+
+    width:60%;
+    /* height: 100%; */
+    margin: auto;
+    text-align:center;
+    /* padding-top: 10px; */
+    /* padding-bottom: 1px; */
+    top:10px;
+}
+
+#no-posts {
+    text-align:center;
+    
+}
+
+.follow-btn {
+    margin-top:10px;
+}
+
+#edit-btn {
+    /* margin-left: 70%; */
+    left:500px;
+    position: absolute;
+    margin-top: -6%;
+}
+#bio-field {
+    background: none;
+    border: none;
+    color:black;
+    outline:none;
+    float:left;
+    width:50%;
+    background-color: #f0f0f0;
+    text-align:center;
+    margin-left:25%;
+    height:70px;
+}
+
+textarea {
+    background-color: #f0f0f0;
+    border:none;
+    border-radius:5px;
+    width:500px;
+    padding-left:5px;
+    white-space: pre;
+}
+
+#save-btn, #cancel-btn {
+    display:none;
+    margin-top:10px;
+}
+
+#bio-text {
+    white-space: pre;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#msg-btn {
+    margin-left:710px;
+    position:absolute;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.msg-href {
+    color: rgb(34, 136, 209);
+    text-decoration: none;
+}
+
+.msg-btn {
+    margin-top:10px;
+    margin-left:8px;
+    color:white;
+}
+
+.friend {
+    width: 600px;
+    background-color: rgba(255,255,255,0.13);
+    position: relative;
+    transform: translate(-50%, 0%);
+    margin-top: 50px;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+    text-align:center;
+    overflow-wrap: break-word;
+}
+
+.friend-name {
+    float:left;
+    position:absolute;
+    left:90px;
+    margin-top:-10px;
+}
+
+.friend-pfp {
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    float:left;
+    position:absolute;
+    left:20px;
+    margin-top:-25px;
+}
+
+.friend-follow-btn {
+    margin-left:30%;
+    margin-top:-15px;
+    position:absolute;
+    
+}
+
+.friend-msg-btn {
+    position:absolute;
+    margin-top: -15px;
+    margin-left:12%;
+}
+
+.send-message{
+    text-align:center;
+    padding-top: 150px;
+}
+
+#message-area {
+    height:200px;
+    width:700px;
+}
+
+.send-msg-btn {
+    margin-left: 68%;
+}
+
+.msg-type {
+    text-align:center;
+    padding-top:30px;
+}
+
+.view-btns {
+    text-align:center;
+    padding-top:20px;
+
+}
+
+.btn-read {
+    margin-left:10px;
+    margin-right: 10px;
+}
+
+
+.btn-read, .btn-sent, .btn-unread {
+    text-align:center;
+    width: 80px;
+    height: 50px;
+}
+
+.btn-reply {
+    margin-left: 70%;
+    margin-right: 5px;
 }

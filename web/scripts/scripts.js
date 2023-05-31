@@ -1,3 +1,5 @@
+const { format } = require("path");
+
 function loginRequest() {
     if ($('#email').val() == '') {
         console.log("Missing email")
@@ -58,6 +60,78 @@ function deletePost(id, from, pfid){
     }
 }
 
-function follow(id){
-    location.href = 'scripts/follow.php?userId=' + id;
+function follow(id, action, from){
+    to = ''
+
+    if(from == 0){
+        to = 'posts'
+    }else if(from == 1){
+        to = 'profile'
+    }else if(from == 3){
+        to = 'friends'
+    }
+
+    if(action == 0){
+        location.href = 'scripts/follow.php?userId=' + id + '&action=follow' + '&from=' + to
+    }
+
+    if (action == 1){
+        location.href = 'scripts/follow.php?userId=' + id + '&action=unfollow' + '&from=' + to
+    }
+}
+
+function updateBio(){
+    let editBtn = document.getElementById('edit-btn')
+    editBtn.style.display = 'none';
+    
+    let save = document.getElementById('save-btn')
+    let cancel = document.getElementById('cancel-btn')
+    save.style.display = 'inline-block'
+    cancel.style.display = 'inline-block'
+    let bioTextElement = document.getElementById("bio-text")
+    let bioTextDiv = document.getElementById("user-bio")
+    let bioText = bioTextElement.innerHTML;
+    // console.log(bioText);
+    bioTextElement.remove();
+    bioTextDiv.innerHTML += '<textarea id="bio-textarea" name="bio" for="bio" >' + bioText + '</textarea>'
+    let bioForm = document.getElementById("bio-field")
+    // bioTextElement.innerHTML = 'New bio';
+    // let currentBio = 
+}
+
+function saveBio(){
+    let bioTextElement = document.getElementById("bio-textarea")
+    let bioText = bioTextElement.value;
+    console.log('scripts/updateBio.php?bio=' + bioText)
+
+    location.href = 'scripts/updateBio.php?bio=' + bioText;
+}
+
+function message(user_id){
+    location.href = 'newMessage.php?id=' + user_id
+}
+
+function sendMessage(to){
+    let area = document.getElementById('message-area')
+    let message = area.value
+
+    location.href = 'scripts/sendMessage.php?message=' + message + '&to=' + to
+}
+
+function changeView(type){
+    if(type == 1){
+        location.href = 'messages.php?view=unread'
+    }
+
+    if(type == 2){
+        location.href = 'messages.php?view=read'
+    }
+
+    if(type == 3){
+        location.href = 'messages.php?view=sent'
+    }
+}
+
+function markAsRead(id){
+    location.href = 'scripts/markAsRead.php?id=' + id
 }

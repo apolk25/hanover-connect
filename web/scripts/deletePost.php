@@ -1,4 +1,5 @@
 <?php
+// to do: make sure hte user actually owns the post
 include('library.php');
 session_start();
 $conn = get_database_connection();
@@ -21,6 +22,7 @@ SQL;
 $deletePost = <<<SQL
     delete from posts
     where post_id = $id
+    and post_user_id = $userId
 SQL;
 
 $from = $_GET['from'];
@@ -35,9 +37,9 @@ if(mysqli_query($conn, $changePostNumber)){
             unlink($file_dir);
             http_response_code(200);
 
-            if($from == 0)
+            if($from == 1)
             {
-                header('location: ../posts.php?deleteSucess=true');
+                header('location: ../posts.php?deleteSuccess=true');
             }
             else if($from == 2)
             {

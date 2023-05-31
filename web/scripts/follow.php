@@ -3,14 +3,31 @@ include('library.php');
 session_start();
 $userId = $_SESSION['userId'];
 $toFollow = $_GET['userId'];
+$action = $_GET['action'];
+$from = $_GET['from'];
 $conn = get_database_connection();
-$sql = <<<SQL
-    insert into followers (follower, follows)
-    values ($userId, $toFollow)
-SQL;
+if($action == 'follow'){
+    $sql = <<<SQL
+        insert into followers (follower, follows)
+        values ($userId, $toFollow)
+    SQL;
+    $result = mysqli_query($conn, $sql);
+    http_response_code(200);
+    header('location: ../' . $from . '.php?id=' . $toFollow);
+}
 
-$result = mysqli_query($conn, $sql);
+if($action == 'unfollow'){
+    $sql = <<<SQL
+    delete from followers
+    where follower = $userId
+    and follows = $toFollow
+    SQL;
 
-http_response_code(200);
-header('location: ../profile.php?id=' . $toFollow);
+    $result = mysqli_query($conn, $sql);
+    http_response_code(200);
+    header('location: ../' . $from . '.php?id=' . $toFollow);
+  
+}
+
+
 ?>
