@@ -3,7 +3,7 @@
 }
 
 .reg-lgn-btns {
-    padding-left:75%;
+    padding-left:70%;
 }
 
 .home-icon {
@@ -297,7 +297,7 @@
     padding: 50px 35px;
     text-align:center;
     overflow-wrap: break-word;
-    
+    margin-bottom:10px;
 }
 
 .post-img, #preview {
@@ -662,7 +662,40 @@ textarea {
     height: 50px;
 }
 
-.btn-reply {
-    margin-left: 70%;
-    margin-right: 5px;
+.comment-btn {
+    float:right;
+    
+}
+
+.comments {
+    padding-top:50px;
+}
+
+.comment {
+    /* width:100%; */
+    /* padding-top:10px; */
+    background-color:#e5e5e5;
+    width:100%;
+    padding:15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.comment-text {
+    font-size: 18px;
+    padding-top:55px;
+}
+.viewcomment-btn {
+    float:right;
+    margin-top: -16px;
+    margin-right:10px;
+}
+
+.num-comments {
+    float:left;
+    color:#6c6c6c;
+}
+
+.pfp-preview {
+    padding:20px;
 }

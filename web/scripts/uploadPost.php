@@ -4,7 +4,7 @@ include('library.php');
 session_start();
 $target_dir = "../posts/";
 $conn = get_database_connection();
-$caption = $email = mysqli_real_escape_string($conn, $caption);
+$caption = mysqli_real_escape_string($conn, $caption);
 
 $uploadOk = 1;
 $target_file = $target_dir . $_SESSION['userId'];

@@ -45,7 +45,7 @@ function showOptions(){
 }
 
 
-  var loadFile = function(event) {
+function loadFile(event) {
     var preview = document.getElementById('preview');
     preview.src = URL.createObjectURL(event.target.files[0]);
     preview.onload = function() {
@@ -134,4 +134,104 @@ function changeView(type){
 
 function markAsRead(id){
     location.href = 'scripts/markAsRead.php?id=' + id
+}
+
+function reply(id){
+    console.log("clicked")
+    let replyBtn = document.getElementById('btn-reply-' + id)
+    replyBtn.style.display = 'none';
+    
+    let replysave = document.getElementById('replysave-btn' + id)
+    let replycancel = document.getElementById('replycancel-btn' + id)
+    replysave.style.display = 'inline-block'
+    replycancel.style.display = 'inline-block'
+    replysave.style.marginRight = '10px'
+
+    let replyPre = document.getElementById("reply-field-" + id)
+    // console.log(bioText);
+    replyPre.innerHTML += '<textarea id="bio-textarea" name="bio" for="bio"></textarea>'
+
+    let markAsRead = document.getElementById('markread')
+    if(markAsRead != null){
+        markAsRead.style.display = 'none'
+    }
+}
+
+function sendReply(id){
+    console.log(id)
+    let message = document.getElementById('bio-textarea').value
+    location.href = 'scripts/sendMessage.php?to=' + id + '&message=' + message
+}
+
+function cancelReply(id){
+    console.log("clicked")
+    let replyBtn = document.getElementById('btn-reply-' + id)
+    replyBtn.style.display = 'inline-block';
+    
+    let replysave = document.getElementById('replysave-btn' + id)
+    let replycancel = document.getElementById('replycancel-btn' + id)
+    replysave.style.display = 'none'
+    replycancel.style.display = 'none'
+    replysave.style.marginRight = '10px'
+
+    let replyPre = document.getElementById("reply-field-" + id)
+    replyPre.innerHTML = '';
+    // console.log(bioText);
+    let markAsRead = document.getElementById('markread')
+    if(markAsRead != null){
+        markAsRead.style.display = 'inline-block'
+    }
+}
+
+function comment(id){
+    let commentBtn = document.getElementById('comment-btn' + id)
+    commentBtn.style.display = 'none';
+    
+    let commentSendBtn = document.getElementById('commentsend-btn' + id)
+    let commentCancelBtn = document.getElementById('commentcancel-btn' + id)
+    commentSendBtn.style.display = 'inline-block'
+    commentCancelBtn.style.display = 'inline-block'
+    commentSendBtn.style.marginRight = '10px'
+
+    let commentPre = document.getElementById("comment-field-" + id)
+    // console.log(bioText);
+    commentPre.innerHTML += '<textarea id="comment-textarea' + id + '"></textarea>'
+
+
+}
+
+function cancelComment(id){
+    let commentBtn = document.getElementById('comment-btn' + id)
+    commentBtn.style.display = 'inline-block';
+    
+    let commentSendBtn = document.getElementById('commentsend-btn' + id)
+    let commentCancelBtn = document.getElementById('commentcancel-btn' + id)
+    commentSendBtn.style.display = 'none'
+    commentCancelBtn.style.display = 'none'
+    commentSendBtn.style.marginRight = '10px'
+
+    let commentPre = document.getElementById("comment-field-" + id)
+    commentPre.innerHTML = '';
+    // console.log(bioText);
+
+}
+
+function sendComment(id){
+    let comment = document.getElementById('comment-textarea' + id).value
+    console.log(comment)
+    location.href = 'scripts/sendComment.php?post_id=' + id + '&comment=' + comment
+}
+
+function viewComments(id){
+    let viewCommentBtn = document.getElementById("viewcomment-btn" + id)
+    let commentDiv = document.getElementById("comments-" + id)
+    if(viewCommentBtn.innerHTML == "View Comments"){
+        viewCommentBtn.innerHTML = "Hide Comments"
+        commentDiv.style.display = ''
+
+    } else if(viewCommentBtn.innerHTML == "Hide Comments"){
+        viewCommentBtn.innerHTML = "View Comments"
+        commentDiv.style.display = 'none'
+
+    }
 }

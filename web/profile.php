@@ -29,10 +29,18 @@ while ($row = $result->fetch_assoc()) {
     echo '<div class="user-profile-info">';
     echo '<img class="profile-pfp" src="uploads/' . $pfp. ' ">';
     echo '<h5 class="user-name">' . $row['user_first_name'] . ' ' . $row['user_last_name'] . '</h5>';
+    
     echo '<p class="user-created">Joined on ' . date_format(date_create($row['user_created']), 'n/d/Y') . '</p>';
+
 
 }
 
+$sql = <<<SQL
+    select count(*)
+    from followers
+    where follows = $id
+SQL;
+echo '<p></p>';
 echo '<pre id="user-bio">';
 echo '<p id="bio-text">' . $user_bio .  '</p>';
 echo '</pre>';

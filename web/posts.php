@@ -13,6 +13,7 @@ include('navigation.php');
     <button id="create-btn" class="btn btn-primary" onclick="showOptions()">Create a post</button>
     <form id="post-form" action="scripts/uploadPost.php" method="post" enctype="multipart/form-data">
         <input id="file" type="file" placeholder="Upload Image" name="fileToUpload" id="fileToUpload" onchange="loadFile(event)">
+        <br>
         <img id="preview" class="post-img" style="padding-bottom: 30px;"/>
 
         <div id="caption-form">
@@ -57,12 +58,49 @@ while ($row = $result->fetch_assoc()) {
 
     if($row['post_img_url'] != "null"){
         echo '<img class="post-img" src="posts/' . $row['post_img_url'] . '">';
-
+        echo '<br>';
+        echo '<br>';
     }
-    
+    echo '<button class="btn btn-primary comment-btn" id="comment-btn' . $row['post_id'] . '" onclick="comment(' . $row['post_id'] . ')">Comment</button>';
+    echo '<pre id="comment-field-' . $row['post_id'] . '">';
+    echo '</pre>';
+    echo '<button style="display:none; margin-top:10px;" class="btn btn-success" id="commentsend-btn' . $row['post_id'] . '"onclick="sendComment(' . $row['post_id'] . ')">Save</button>';
+    echo '<button style="display:none; margin-top:10px;" class="btn btn-danger" id="commentcancel-btn' . $row['post_id'] . '"onclick="cancelComment(' . $row['post_id'] . ')">Cancel</button>';
+
+
+    echo '<button class="btn btn-secondary viewcomment-btn" id="viewcomment-btn' . $row['post_id'] . '" onclick="viewComments(' . $row['post_id'] . ')">View Comments</button>';
+
+    $postId = $row['post_id'];
+    $sql = <<<SQL
+        select comment_id, comment_post_id, 
+        comment_user_id, comment_comment, comment_created, user_id, 
+        user_first_name, user_last_name, user_pfp
+        from comments
+        join users on comment_user_id = user_id
+        where comment_post_id = $postId
+        order by comment_created desc
+    SQL;
+    $commentResult = mysqli_query($conn, $sql);
+    $numComments = mysqli_num_rows($commentResult);
+    echo '<h6 class="num-comments">Comments: ' . $numComments . '</h6>';
+    echo '<div class="comments" style="display:none;" id="comments-' . $row['post_id'] . '">';
+    while ($commentRow = $commentResult->fetch_assoc()) {
+        if($commentRow['user_pfp'] != null){
+            $commenterPfp = $commentRow['user_pfp'];
+        }elseif ($commentRow['user_pfp'] == null){
+            $commenterPfp = '../img/default-profile.jpg';
+        }
+        echo '<div class="comment">';
+        echo '<img class="friend-pfp" style="margin-left:25px; margin-top:2px;" src="uploads/' . $commenterPfp. ' ">';
+        echo '<a class="user" href="profile.php?id=' . $commentRow['user_id'] . '"><h5 style="margin-left:20px; margin-top:15px;" class="friend-name">' . $commentRow['user_first_name'] . ' ' . $commentRow['user_last_name'] . '</h5></a>';
+        echo '<h5 class="comment-text">' . $commentRow['comment_comment'] . '</h5></a>';
+        echo '</div>';
+    }
+    echo '</div>';
+
     echo '</div>';
     
-    echo '</div>';
+
 }
 
 

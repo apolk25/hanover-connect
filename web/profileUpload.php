@@ -27,17 +27,21 @@ if (isset($_GET['logout'])) {
     <body class="indexbody">
         <?php include('navigation.php'); ?>
 
-        <div class="divider"></div>
-        <div class="inner-pfp">
+        <div class="post">
+
             <form class="pfpform" action="scripts/upload.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="file" name="fileToUpload" id="fileToUpload" onchange="loadFile(event)">
+                <br>
+                <img id="preview" class="pfp-preview"/>
+                <br>
                 <input type="submit" value="Upload Image" name="submit">
+
             </form>
         </div>
-        <?php
         
+        <?php
         if(isset($_GET["success"]) && htmlspecialchars($_GET["success"])){
-            echo "<h1 id='success'>Profile photo updated successfully!</h1>";
+            echo '<h1 style="color:lime; text-align:center;">Profile photo updated successfully!</h1>';
         }
         ?>
         

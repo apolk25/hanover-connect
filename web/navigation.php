@@ -4,7 +4,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <a href="posts.php" class="navbar-link"><p class="navbar-link">Posts</p></a>
-                <a href="friends.php" class="navbar-link"><p class="navbar-link">Friends</p></a>
                     <?php  if (!isset($_SESSION['userId'])) : ?>
                         <div class="reg-lgn-btns">
                             <!-- <button class="btn btn-primary">Register</button> -->
@@ -16,6 +15,8 @@
                     <?php endif ?> 
 
                     <?php if (isset($_SESSION['userId'])) : ?>
+                    <a href="friends.php" class="navbar-link"><p class="navbar-link">Friends</p></a>
+
                     <a class="msg-href" href="messages.php?view=unread"><i class="fas fa-envelope" id="msg-btn"></i></a>
 
                     <p class="signed-in">
