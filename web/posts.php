@@ -3,6 +3,22 @@ include('scripts/library.php');
 session_start();
 include('head.php');
 include('navigation.php');
+
+if(isset($_GET['success'])){
+    $success = $_GET['success'];
+}
+
+if(isset($success)){
+    if($success == 'true'){
+        echo '<div class="successbox">';
+        echo '<p class="successmessage">Post uploaded successfully!</p>';
+        echo '</div>';
+    }else if($success == 'false'){
+        echo '<div class="failurebox">';
+        echo '<p class="failmessage">Upload unsuccessful, please try again.</p>';
+        echo '</div>';   
+    }
+}
 ?>
 
 <h1 id="feed" class="grays">Recent Posts</h1>
@@ -102,6 +118,8 @@ while ($row = $result->fetch_assoc()) {
     
 
 }
+
+
 
 
 

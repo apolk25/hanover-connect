@@ -24,7 +24,7 @@ if (isset($_GET['logout'])) {
 
 <?php include('head.php'); ?>
 
-    <body class="indexbody">
+    <!-- <body class="indexbody"> -->
         <?php include('navigation.php'); ?>
 
         <div class="post">

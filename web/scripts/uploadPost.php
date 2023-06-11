@@ -50,7 +50,8 @@ if($_FILES["fileToUpload"]["name"] == ''){
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
+ header('location: ../posts.php?success=false');
+
 // if everything is ok, try to upload file
 } else {
 

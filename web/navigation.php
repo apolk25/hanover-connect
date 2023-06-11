@@ -6,9 +6,6 @@
                 <a href="posts.php" class="navbar-link"><p class="navbar-link">Posts</p></a>
                     <?php  if (!isset($_SESSION['userId'])) : ?>
                         <div class="reg-lgn-btns">
-                            <!-- <button class="btn btn-primary">Register</button> -->
-        
-                            <!-- <button class="btn btn-primary">Register</button> -->
                             <a href="register.php"><button class="btn btn-success"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</button></a>
                             <a href="login.php"><button class="btn btn-primary"><i class="fas fa-sign-in-alt" aria-hidden="true"></i> Login</button></a>
                         </div>
@@ -16,23 +13,23 @@
 
                     <?php if (isset($_SESSION['userId'])) : ?>
                     <a href="friends.php" class="navbar-link"><p class="navbar-link">Friends</p></a>
-
-                    <a class="msg-href" href="messages.php?view=unread"><i class="fas fa-envelope" id="msg-btn"></i></a>
-
-                    <p class="signed-in">
-                        <?php $userId = $_SESSION['userId']; 
-                        echo '<a class="user" href="profile.php?id=' .  $userId . '">';
-                        echo $_SESSION['firstName'];
-                        echo '&nbsp';
-                        echo $_SESSION['lastName'];
-                        echo '</a>'; ?>
-                    </p>
-
-
+                    
+                    
                     <div class="dropdown">
+                        <div id="name">
+                        <a href="messages.php?view=unread"><i class="fas fa-envelope" id="msg-btn"></i></a>
+                        <span class="signed-in">
+                            <?php $userId = $_SESSION['userId']; 
+                            echo '<a class="user" id="name-tag" href="profile.php?id=' .  $userId . '">';
+                            echo $_SESSION['firstName'];
+                            echo '</a>'; ?>
+  
+                        </span>
+                        </div>
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
                     <img src="img/default-profile.jpg" id="pfp">
+
                     <?php
                         $filename = 'uploads/' . $_SESSION['userId'] . '.png';
                         if(file_exists($filename)){
@@ -49,7 +46,6 @@
                         <li><a class="dropdown-item" href="index.php?logout='1'"><i class="fas fa-sign-out-alt"></i> Sign out</a></li>
 
                     </ul>
-
                     </div>
                     <?php endif ?>   
             </div>

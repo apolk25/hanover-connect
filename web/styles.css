@@ -215,8 +215,13 @@
 .signed-in {
     padding-top:15px;  
     font-size:20px;
-    padding-left:65%;
 }
+
+#name {
+    display:inline;
+}
+
+
 
 .pfp {
     border-radius:50%;
@@ -548,7 +553,6 @@ textarea {
     border-radius:5px;
     width:500px;
     padding-left:5px;
-    white-space: pre;
 }
 
 #save-btn, #cancel-btn {
@@ -562,10 +566,9 @@ textarea {
 }
 
 #msg-btn {
-    margin-left:710px;
-    position:absolute;
+    /* margin-left:710px; */
     font-size: 20px;
-    margin-top: -10px;
+    margin-right:5px;
 }
 
 .msg-href {
@@ -674,7 +677,7 @@ textarea {
 .comment {
     /* width:100%; */
     /* padding-top:10px; */
-    background-color:#e5e5e5;
+    background-color:#f4f4f4;
     width:100%;
     padding:15px;
     border-radius: 10px;
@@ -682,7 +685,7 @@ textarea {
 }
 
 .comment-text {
-    font-size: 18px;
+    font-size: 15px;
     padding-top:55px;
 }
 .viewcomment-btn {
@@ -698,4 +701,46 @@ textarea {
 
 .pfp-preview {
     padding:20px;
+}
+
+.dropdown {
+    /* margin-left:72%; */
+    margin-left: auto;
+    display:inline;
+}
+
+.successbox {
+    width:30%;
+    height:10%;
+    margin: auto;
+    margin-top:3%;
+    border-radius:10px;
+    margin-bottom:2%;
+    box-shadow: 0 0 40px rgba(7, 172, 87, 0.6);
+
+}
+
+.successmessage {
+    text-align:center;
+    padding-top:7%;
+    color:limegreen;
+    font-weight:bolder;
+}
+
+.failmessage {
+    text-align:center;
+    padding-top:7%;
+    color:red;
+    font-weight:bolder;
+}
+
+.failurebox {
+    width:30%;
+    height:10%;
+    margin: auto;
+    margin-top:3%;
+    border-radius:10px;
+    margin-bottom:2%;
+    box-shadow: 0 0 40px rgba(227, 11, 11, 0.6);
+
 }

@@ -3,9 +3,8 @@ include('library.php');
 session_start();
 $userId = $_SESSION['userId'];
 $conn = get_database_connection();
-$id = $_GET['post_id'];
-$comment = $_GET['comment'];
-$comment = mysqli_real_escape_string($conn, $comment);
+$id = mysqli_real_escape_string($conn, $_GET['post_id']);
+$comment = mysqli_real_escape_string($conn, $_GET['comment']);
 
 $sql = <<<SQL
     insert into comments (comment_post_id, comment_user_id, comment_comment, comment_created)

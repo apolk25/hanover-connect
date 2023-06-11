@@ -3,8 +3,7 @@ include('library.php');
 session_start();
 $userId = $_SESSION['userId'];
 $conn = get_database_connection();
-// $bio = nl2br($bio);
-// echo $bio;
+$bio = mysqli_real_escape_string($conn, $_GET['bio']);
 $updateBio = <<<SQL
     update users
     set user_bio = '$bio'

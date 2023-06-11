@@ -69,7 +69,7 @@ if(isset($userId) && $userId != $id){
         echo '<button class="btn btn-secondary follow-btn" onclick="follow(' . $id . ', 1, 1)">Following</button>';
 
     }
-    echo '<button class="btn btn-warning msg-btn">Message</button>';
+    echo '<button onclick="message(' . $id . ')" class="btn btn-warning msg-btn">Message</button>';
 }
 echo '</div>';
 
