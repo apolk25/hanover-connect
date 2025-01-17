@@ -3,7 +3,7 @@
 /*************************************************************************************************
  * library.php
  *
- * Common environment settings and functions used througout the Hanover DPW Park Permitting
+ * Common environment settings and functions used througout the Hanover Connect
  * application.
  *************************************************************************************************/
 
@@ -16,7 +16,7 @@ function get_database_connection()
     $servername = 'localhost';
     // TODO: Don't use 'root', make a separate user for this database
     $username = 'root';
-    $password = 'Adampolk25!';
+    $password = '';
     $dbname = 'hanover_connect';
 
     $conn = new mysqli($servername, $username, $password, $dbname);
